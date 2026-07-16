@@ -20,7 +20,9 @@ val nnf : formula -> formula
 
 
 type pre_graph = {   
-  (* stands for previous graph. It is an intermediate data structure used to transition from an LTL formula to a GBA.*)
+  (* stands for previous graph. It is an intermediate data structure used as a transition from an LTL formula to a GBA.
+     It is widely known as the "tableau construction".
+  *)
   nb_nodes : int;
   nb_var : int;
   incoming : (int, int list) Hashtbl.t;

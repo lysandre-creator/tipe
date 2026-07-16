@@ -86,6 +86,9 @@ let rec nnf (f:formula):formula = (*turns into Negation Normal Form*)
   | Empty -> Empty
 
 type pre_graph =
+  (* stands for previous graph. It is an intermediate data structure used as a transition from an LTL formula to a GBA.
+     It is widely known as the "tableau construction".
+  *)
   {nb_nodes : int ;
    nb_var : int ;                            (*variables are numbered from 0 to nb_var - 1*)
    incoming: (int, int list) Hashtbl.t;
