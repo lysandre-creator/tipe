@@ -68,6 +68,7 @@ The three encodings describe the exact same puzzle and all find a valid solution
  
 - Enforcing a rule **in the Kripke structure** means doing more work up front (checking the rule while building the graph), but the resulting graph stays small, since illegal states are never created in the first place.
 - Enforcing a rule **in the formula** skips that up-front check, but the rule becomes an extra temporal subformula that the tableau construction has to track. Thus, all the automata become  bigger and complexity explodes.
+
 For a puzzle this small, both choices still finish in reasonable time. But the "all in formula" column already shows the cost clearly: a 5-order-of-magnitude slowdown and a longer, less direct solution (20 trips instead of 12). On a larger system (more items, more states), this gap would only widen, since the automaton built from the formula grows independently of how large the underlying system is. Then, **deciding where a rule is enforced is a real design choice for using model checking effectively**.
 
 
